@@ -1,4 +1,5 @@
 require './display.rb'
+require './player.rb'
 
 class Game
   include Cursorable
@@ -9,6 +10,9 @@ class Game
     @board = Board.new
     @display = Display.new(@board)
     @cursor_pos = [0,0]
+    @player_black = Player.new(@board)
+    @player_white = Player.new(@board)
+
 
   end
 
@@ -20,6 +24,9 @@ class Game
       until good_input
         @display.render
         get_input
+        pos = @player_white.move
+        pos2 = @player_white.move
+        return pos, pos2
       end
 
     end
