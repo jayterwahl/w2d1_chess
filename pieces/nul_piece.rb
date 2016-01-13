@@ -2,7 +2,13 @@ class Nul_piece
   attr_reader :icon
 
   def initialize
-    @icon = " i "
+    @icon = "   "
+    @color = "unique"
+  end
+
+  def valid_moves(board, pos)
+    []
+    #none!
   end
 
 end
